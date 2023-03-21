@@ -16,89 +16,12 @@ session_start();
 
 
 
-  <style type="text/css">
-
-   html, body {
-    height: 100%;
-  }
-
-    body{
-      background-color: #2F4F4F;
-      background-repeat: no-repeat;
-}
-    
-
-/*    les règles css pour les liens */
-    .multi_choix a{
-      text-decoration: none;
-      color: white;
-      width: 100%;
-      font-weight: 700;
-      /*  background-color: #2F4F4F;*/
-
-
-
-    }
-    .afficheConnexion{
-
-      list-style: none;
-      font-weight: 700;
-    }
-
-   
-
-    
-    
-
-
-    
-
-    
-
-
-
-    .phraseAcc{
-
-      font-family: 'Paintbrush', cursive;
-      font-size: 36px;
-      font-weight: bold;
-      color: white;
-      text-align: center;
-}
-
-
-    
-/*    règles css pour avoir une même taille des carte, element parent de images*/
-    .taille-carte {
-      height: 80%;
-    }
-
-
-/*    règles css pour avoir une même taille pour touts les images */
-
-    .card-img-top {
-      height: 250px;
-    }
-
-    footer a{
-      text-decoration: none;
-      color: white;
-    }
-    
-
-
-
-   
-
-
-
-  </style>
-
+ 
 	
  
 </head>
 
-<body id="corps_p" class="d-flex flex-column">
+<body class="corps_id0 d-flex flex-column">
 
   <?php 
 
@@ -153,6 +76,7 @@ session_start();
           <li class="nav-item"><a class="nav-link" href="#">FILTRES</a></li>
           <li class="nav-item"><a class="nav-link" href="#">COMMUNAUTE</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Nouveauté</a></li>
+          <li class="nav-item"><a class="nav-link" href="Statistique1.php">Statistiques</a></li>
         </ul>
       </div>
 
@@ -169,11 +93,11 @@ session_start();
 
           }
 
+
           ?>
       </div>
           
-             <!-- width: 100%; float: right; style=" white-space: nowrap; -->
-      <!-- HTML -->
+
     </div>
   </nav>
 </div>
