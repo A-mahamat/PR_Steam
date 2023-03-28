@@ -77,6 +77,8 @@ session_start();
           <li class="nav-item"><a class="nav-link" href="#">COMMUNAUTE</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Nouveauté</a></li>
           <li class="nav-item"><a class="nav-link" href="Statistique1.php">Statistiques</a></li>
+          <li class="nav-item"><a class="nav-link" href="recommandations.php">Voir les recommandations</a></li>
+
         </ul>
       </div>
 

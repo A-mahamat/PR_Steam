@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -61,11 +62,18 @@ footer a{
 	background-image: url("Images/combat.jpg");
 
 
+=======
+body{
+	background-color: #2F4F4F;
+	background-image: url("Images/300.gif");
+	background-repeat: no-repeat;
+>>>>>>> 2038771 (Remise nouveau fichier avec nouvelles tables , formulaires , recommandations)
 }
 #fond_formulaireIns{
 	background-color: #f8f8f8;
 	border: 10px;
 }
+<<<<<<< HEAD
 
 
 
@@ -100,5 +108,17 @@ footer a{
         margin-left: 18%;
         margin-top: 8%;
         margin-right: 14%;
+=======
+/*.couleur_nav{
+	background-color: ;
+
+}*/
+.multi_choix{
+	width: 100%;
+}
+.barN a{
+      text-decoration: none;
+      color: black;
+>>>>>>> 2038771 (Remise nouveau fichier avec nouvelles tables , formulaires , recommandations)
     }
 

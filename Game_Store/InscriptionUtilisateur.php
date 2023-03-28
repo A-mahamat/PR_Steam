@@ -5,9 +5,27 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="StyleGame_Store.css">
 
+<<<<<<< HEAD
   
 </head>
 <body class="corps_ForIns">
+=======
+  <style type="text/css">
+    body{
+      background-image: url("Images/mine2.jpg");
+    }
+    
+
+    
+
+    h3{
+      font-weight: 600;
+    }
+  </style>
+  
+</head>
+<body >
+>>>>>>> 2038771 (Remise nouveau fichier avec nouvelles tables , formulaires , recommandations)
 
 
   <!-- Barre de navigation -->
