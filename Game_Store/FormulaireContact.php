@@ -46,7 +46,7 @@
     <p>Vous pouvez nous contacter en utilisant le formulaire ci-dessous :</p>
     
     <!-- Formulaire de contact -->
-    <form class="remplacer par le fichier php à creer" method="post">
+    <form class="contacter.php" method="post">
       <div class="form-group">
         
        Nom: <input type="text" class="form-control" name="nom" >
