@@ -458,7 +458,7 @@ session_start();
           <li><a href="#">Accueil</a></li>
           
           <li><a href="#">Promotions</a></li>
-          <li><a href="FormulaireContact.html">Contact</a></li>
+          <li><a href="FormulaireContact.php">Contact</a></li>
         </ul>
       </div>
       <div class="col-md-3">
