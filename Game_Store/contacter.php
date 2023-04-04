@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>contacter</title>
-		<?php include /* insérer nom du fichier de la base de donnée */ ?>
+		<?php include 'fonctionConnexion.php'; ?>
 	</head>
 	<body>
 		<?php
@@ -19,8 +19,8 @@
 				$message = $_POST["message"];
 				
 				// ajout dans la base de données
-				$bdd = /* insérer fonction d'accès à la base de données */;
-				$sql = "INSERT INTO " /*ajouter nom table*/ "(nom, email, sujet, message) VALUES ('$nom', '$email', '$sujet', '$message')";
+				$bdd = connDB();
+				$sql = "INSERT INTO 'messages'(nom, email, sujet, message) VALUES ('$nom', '$email', '$sujet', '$message')";
 				if (mysqli_query($bdd, $sql)) {
 					echo "Message sent successfully";
 				} else {
