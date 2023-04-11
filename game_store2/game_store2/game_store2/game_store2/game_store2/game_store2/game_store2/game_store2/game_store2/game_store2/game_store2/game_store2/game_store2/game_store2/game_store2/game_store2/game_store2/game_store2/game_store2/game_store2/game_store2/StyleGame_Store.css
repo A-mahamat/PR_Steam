@@ -1,0 +1,124 @@
+<<<<<<< HEAD
+
+
+
+/*Style pour Index0.php */
+
+.barN a{
+      text-decoration: none;
+      color: black;
+    }
+
+.corps_id0{
+	background-color: #2F4F4F;
+      background-repeat: no-repeat;
+
+    
+    }
+.multi_choix a{
+	text-decoration: none;
+	color: white;
+      width: 100%;
+      font-weight: 700;
+      /*  background-color: #2F4F4F;*/
+
+
+
+    }
+.phraseAcc{
+	font-family: 'Paintbrush', cursive;
+      font-size: 36px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+}
+.afficheConnexion{
+	list-style: none;
+      font-weight: 700;
+    }
+/* règles css pour avoir une même taille des carte, element parent de images*/
+.taille-carte {
+	height: 80%;
+    }
+
+/* règles css pour avoir une même taille pour toutes les images */
+
+.card-img-top {
+	height: 250px;
+    }
+footer a{
+      text-decoration: none;
+      color: white;
+    }
+
+
+
+  
+
+
+/*Style pour le formulaire de le connexion  */
+
+.corps_ForConnexion{
+	background-image: url("Images/combat.jpg");
+
+
+=======
+body{
+	background-color: #2F4F4F;
+	background-image: url("Images/300.gif");
+	background-repeat: no-repeat;
+>>>>>>> 2038771 (Remise nouveau fichier avec nouvelles tables , formulaires , recommandations)
+}
+#fond_formulaireIns{
+	background-color: #f8f8f8;
+	border: 10px;
+}
+<<<<<<< HEAD
+
+
+
+
+
+.fon{
+	font-weight: 600;
+}
+
+
+.nomChamps{
+	font-weight: 600;
+    }
+
+/*Style pour le formulaire de l'Inscription */
+
+.corps_ForIns{
+	background-image: url("Images/mine2.jpg");
+}
+
+
+/*Style pour le fichier statistiques */
+
+.barN_stat  a{
+	text-decoration: none;
+      color: white;
+
+
+}
+
+#chart_div {
+        margin-left: 18%;
+        margin-top: 8%;
+        margin-right: 14%;
+=======
+/*.couleur_nav{
+	background-color: ;
+
+}*/
+.multi_choix{
+	width: 100%;
+}
+.barN a{
+      text-decoration: none;
+      color: black;
+>>>>>>> 2038771 (Remise nouveau fichier avec nouvelles tables , formulaires , recommandations)
+    }
+
