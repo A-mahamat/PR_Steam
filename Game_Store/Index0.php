@@ -8,12 +8,51 @@ session_start();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Game_Store</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- lien pour l'icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+
+  <!-- lien pour bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+
+    <!-- lien pour notre fichier du style -->
 	<link rel="stylesheet" type="text/css" href="StyleGame_Store.css">
 
-  <!-- lien pour les icônes -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <!-- lien pour l'icônes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap" rel="stylesheet">
 
+  <!-- Fichier JavaScript de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap"></script>
+
+
+
+  
+  
+
+  
+ 
+
+ 
+ <script>
+  let menuItems = document.querySelectorAll(".menu-item");
+  for (let item of menuItems) {
+    item.addEventListener("mouseover", function() {
+        let submenu = this.querySelector(".submenu");
+        if (submenu) {
+            submenu.style.display = "block";
+        }
+    });
+    item.addEventListener("mouseout", function() {
+        let submenu = this.querySelector(".submenu");
+        if (submenu) {
+            submenu.style.display = "none";
+        }
+    });
+}
+</script>
+
+ 
 
 
  
@@ -42,67 +81,113 @@ session_start();
     <div id="Navbar1">
     	<nav class="navbar navbar-expand-lg " style="background-image: url('Images/st.jpg');height: 287px; width: 100%;">
 
-			<!-- logo -->
-			<!-- <div class="logo">
-				<img src="France_st/Images/HADIR.png" height="100px" width="100px"><br/>
+			
 
-			</div> -->
-
-			<!-- logo de la connexion -->
-			<div class="connexion" >
-				<img src="conn2.png" height="70px" width="70px"><br/>
-	    	</div>
+			<!-- le lien de la connexion -->
+			
 	    	<!-- HTML -->
 	    </nav >
     </div>
 	
     <!-- la barre de navigation -->
     <div id="Navbar2" class="bg-dark text-light">
-  <nav class="navbar navbar-expand-lg ">
+  <nav class="navbar navbar-expand-sm">
     <div class="container-fluid">
+      <!-- logo du site -->
+      <div class="logo">
+        <span>G</span>
+        <span>A</span>
+        <span>M</span>
+        <span>E</span>
+        <span> </span>
+        <span>S</span>
+        <span>T</span>
+        <span>O</span>
+        <span>R</span>
+        <span>E</span>
+      </div>
+      
       <!-- le formulaire de recherche -->
-      <div id="formulaire_recherche" class=" mt-4">
+      <div id="formulaire_recherche" class=" mt-4 mx-3">
         <form class="form-inline my-2 my-lg-0" style="margin-right:25px" method="post" action="recherche.php">
           <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Rechercher" name="recherche" >
           <button class="btn btn-outline-success btn-sm my-2 my-sm-0" type="submit">Rechercher</button> 
         </form>
-      </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NavbarMenu" aria-controls="NavbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-       
+      </div> 
+      
+      <button class="  navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarMenu" aria-controls="NavbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="  navbar-toggler-icon"></span>
       </button>
-      <div class="multi_choix collapse navbar-collapse" id="NavbarMenu"> 
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item"><a class="nav-link" href="#">TAGS</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">FILTRES</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">COMMUNAUTE</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Nouveauté</a></li>
-          <li class="nav-item"><a class="nav-link" href="Statistique1.php">Statistiques</a></li>
-          <li class="nav-item"><a class="nav-link" href="recommandations.php">Voir les recommandations</a></li>
+      <div class="multi_choix collapse navbar-collapse" id="NavbarMenu">
+          <ul class="navbar-nav">
+          <li class="  nav-item"><a class="nav-link a_different_de_section " href="#">TAGS</a></li>
+          <li class="  nav-item  "><a  class="  nav-link a_different_de_section "  href="#">FILTRES</a></li>
+      </div>
 
+          
+        <div class="SECTION">
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="#">SECTION</a>
+            <ul class="submenu">
+              <li class="nav-item"><a class="nav-link" href="#">communauté</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">nouveauté</a></li>
+              <li class="nav-item"><a class="nav-link" href="Statistique1.php">statistiques</a></li>
+              <li class="nav-item"><a class="nav-link" href="recommandations.php">Voir les recommandations</a></li>
+              <li class="nav-item"><a class="nav-link" href="recommandations2.php"> Quel jeu te ferait plaisir ?</a></li>
+              
+            </ul>
+          </li>
         </ul>
       </div>
+        
+
+        
+
+
+      
+      
+
 
      <div class="afficheConnexion">    
 
       <?php 
 
           if ($client_connecté) {
-            echo "<li class='nav-item '><a  class='nav-link' href='deconnexion.php'>déconnexion</a></li>";
+            $nom = $_SESSION['client'][0][1];
+          echo"<ul class='menu'>
+          <li class='menu-item'>
+            <a id='a_nom_user' href='#''>"." ".$nom." "."</a>
+            <ul class='submenu'>
+              <li class='nav-item'><a class='nav-link' href='#''>Profil</a></li>
+              <li class='nav-item'><a class='nav-link' href='deconnexion.php''>Déconnexion</a></li>
+              
+            </ul>
+          </li>
+        </ul>";
+        
+            // echo "<li class='nav-item '>"." ".$nom." "."</li>";
           }else{
+            echo "<li class='nav-item  '><a  class='nav-link' href='FormulaireConnexionUser.php'>CONNEXION</a></li>";
 
-            echo "<li class='nav-item '><a  class='nav-link' href='FormulaireConnexionUser.php'>Connexion</a></li>";
-
-
+            
           }
 
-
-          ?>
+      ?>
       </div>
-          
 
+      <!-- lien pour voir renvoyer le user vers son panier  -->
+      <div class="panier">
+
+        <a href="panier.php"><i class='fas fa-shopping-cart'></i></a>
+        
+
+      </div> 
     </div>
-  </nav>
+</nav>
+
 </div>
+
 
     
     <div class=" phraseAcc ">
@@ -110,7 +195,7 @@ session_start();
     </div>
 
 
-    <!-- du code php pour l gestion de l'affichage dans la grille  -->
+    <!-- du code php pour l gestion de l'affichage dans des grilles  -->
 
     <?php 
    
@@ -123,7 +208,7 @@ session_start();
 
       //nombre_lignes pour parcourir tout le tableau avec un for
       $nombre_lignes = count($_SESSION['jeux']);
-      echo $nombre_lignes;
+      
 
       //la boucle for
 
@@ -166,21 +251,21 @@ session_start();
             //condition 1
 
             if (count($sous_tableaux)>0) {
-              $nom0=$sous_tableaux[0][0];
-              $image0=$sous_tableaux[0][5];
-              $date_sorti0=$sous_tableaux[0][1];
-              $prix0=$sous_tableaux[0][4];
+              $nom0=$sous_tableaux[0][1];
+              $image0=$sous_tableaux[0][6];
+              $date_sorti0=$sous_tableaux[0][2];
+              $prix0=$sous_tableaux[0][5];
 
               echo "<div class='col-md-3 col-sm-6 col-xs-12'>
-                      <div class=' taille-carte card mb-4'>
+                      <a class='carte_lien' href='Article.php?id_art=".$sous_tableaux[0][0]."'><div class=' taille-carte card mb-4'>
                         <img src='$image0' class='card-img-top' alt='Image produit 1'>
                         <div class='card-body'>
-                           <h5 class='card-title'>Produit 2</h5>
-                          <p class='card-text'>p1 :"." ".$nom0." "."</p>
-                          <a href='#' class='btn btn-primary'>Ajouter au panier</a>
+                        <p class='card-text'>"." ".$nom0." "."</p>
+                        <h5 class='card-title'>"." ".$prix0." "." €</h5>
                         </div>
-                      </div>
+                      </div></a>
                     </div>";
+                    //<a href='Articles/article.php?id_art=".$enr['id_art']."'>" . $enr['nom'] . "</a>
                   }
 
 
@@ -189,20 +274,20 @@ session_start();
     
 
             if (count($sous_tableaux)>1) {
-              $nom1=$sous_tableaux[1][0];
-              $image1=$sous_tableaux[1][5];
-              $date_sorti1=$sous_tableaux[1][1];
-              $prix0=$sous_tableaux[0][4];
+              $nom1=$sous_tableaux[1][1];
+              $image1=$sous_tableaux[1][6];
+              $date_sorti1=$sous_tableaux[1][2];
+              $prix1=$sous_tableaux[1][5];
 
               echo "<div class='col-md-3 col-sm-6 col-xs-12'>
-                      <div class=' taille-carte card mb-4'>
+                      <a class='carte_lien' href='Article.php?id_art=".$sous_tableaux[1][0]."'><div class=' taille-carte card mb-4'>
                         <img src='$image1' class='card-img-top' alt='Image produit 2'>
                         <div class='card-body'>
-                          <h5 class='card-title'>Produit 2</h5>
-                          <p class='card-text'>nom du jeux 2 : "." ".$nom1."</p>
-                          <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                          <p class='card-text'>"." ".$nom1." "."</p>
+                        <h5 class='card-title'>"." ".$prix1." "." €</h5>
+                          
                         </div>
-                      </div>
+                      </div></a>
                     </div>";
                     }
 
@@ -211,36 +296,36 @@ session_start();
             
               //Article 2
               echo "<div class='col-md-3 col-sm-6 col-xs-12'>
-                     <div class=' taille-carte card mb-4'>
+                     <a class='carte_lien' href='Article.php?id_art=".$sous_tableaux[2][0]."'><div class=' taille-carte card mb-4'>
                         <img src='Images/GTA.jpg' class='card-img-top' alt='Image produit 2'>
                           <div class='card-body'>
-                                  <h5 class='card-title'>Produit 2</h5>
-                                  <p class='card-text'>GTA</p>
-                                  <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                                  <p class='card-text'> GTA </p>
+                                  <h5 class='card-title'> 59.99 €</h5>
+                                  
                                 </div>
-                              </div>
+                              </div></a>
                             </div>";
 
                             //Article 3
                             echo "<div class='col-md-3 col-sm-6 col-xs-12'>
-                              <div class=' taille-carte card mb-4'>
+                              <a class='carte_lien' href='Article.php?id_art=".$sous_tableaux[3][0]."'><div class=' taille-carte card mb-4'>
                                 <vidéo src='Images/pp.webm' class='card-img-top' alt='Image produit 2'>
                                 <div class='card-body'>
-                                  <h5 class='card-title'>Produit 3</h5>
-                                  <p class='card-text'>300PR</p>
-                                  <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                                  <p class='card-text'>pp</p>
+                                  <h5 class='card-title'>100 €</h5>
+                                  
                                 </div>
-                              </div>
+                              </div></a>
                             </div>";
                             //Article 4
                             echo "<div class='col-md-3 col-sm-6 col-xs-12'>
-                              <div class=' taille-carte card mb-4'>
+                              <a class='carte_lien' href='Article.php?id_art=".$sous_tableaux[4][0]."'><div class=' taille-carte card mb-4'>
                                 <img src='Images/200.webp' class='card-img-top' alt='Image produit 2'>
                                 <div class='card-body'>
-                                  <h5 class='card-title'>Produit 4</h5>
-                                  <p class='card-text'>200PR</p>
-                                  <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
-                                </div>
+                                  <p class='card-text'>200pm</p>
+                                  <h5 class='card-title'>16.99 €</h5>
+                                  
+                                </div></a>
                               </div>
                             </div>";
 
@@ -254,19 +339,20 @@ session_start();
             //condition 3
 
              if (count($sous_tableaux)>2) {
-              $nom2=$sous_tableaux[2][0];
-              $image2=$sous_tableaux[2][5];
-              $date_sorti2=$sous_tableaux[2][1];
+              $nom2=$sous_tableaux[2][1];
+              $image2=$sous_tableaux[2][6];
+              $date_sorti2=$sous_tableaux[2][2];
+              $prix2=$sous_tableaux[2][5];
 
               echo "<div class='col-md-3 col-sm-6 col-xs-12'>
-                <div class=' taille-carte card mb-4'>
+                <a class='carte_lien' href='Article.php?id_art=".$sous_tableaux[2][0]."'><div class=' taille-carte card mb-4'>
                   <img src='$image2' class='card-img-top' alt='Image produit 3'>
                   <div class='card-body'>
-                    <h5 class='card-title'>Produit 3</h5>
-                    <p class='card-text'>nom du jeux 3 : "." ".$nom2."</p>
-                    <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                    <p class='card-text'>"." ".$nom2." "."</p>
+                    <h5 class='card-title'>"." ".$prix2." "." €</h5>
+                    
                   </div>
-                </div>
+                </div></a>
               </div>";
               }
 
@@ -276,44 +362,45 @@ session_start();
 
                  //Article 3
                             echo "<div class='col-md-3 col-sm-6 col-xs-12'>
-                              <div class=' taille-carte card mb-4'>
+                              <a class='carte_lien' href='Article.php?id_art=".$sous_tableaux[2][0]."'><div class=' taille-carte card mb-4'>
                                 <img src='Images/300.gif' class='card-img-top' alt='Image produit 2'>
                                 <div class='card-body'>
-                                  <h5 class='card-title'>Produit 3</h5>
-                                  <p class='card-text'>300PR</p>
-                                  <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                                  <p class='card-text'>300pp</p>
+                                  <h5 class='card-title'>15.66 €</h5>
+                                  
                                 </div>
-                              </div>
+                              </div></a>
                             </div>";
                             //Article 4
                             echo "<div class='col-md-3 col-sm-6 col-xs-12'>
-                              <div class=' taille-carte card mb-4'>
+                              <a class='carte_lien' href='Article.php?id_art=".$sous_tableaux[2][0]."'><div class=' taille-carte card mb-4'>
                                 <img src='Images/200.webp' class='card-img-top' alt='Image produit 2'>
                                 <div class='card-body'>
-                                  <h5 class='card-title'>Produit 4</h5>
-                                  <p class='card-text'>200PR</p>
-                                  <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                                  <p class='card-text'>400po</p>
+                                  <h5 class='card-title'>69.99 €</h5>
+                                  
                                 </div>
-                              </div>
+                              </div></a>
                             </div>";
                        }
 
 
               //condition 4
              if (count($sous_tableaux)>3) {
-              $nom3=$sous_tableaux[3][0];
-              $image3=$sous_tableaux[3][5];
-              $date_sorti3=$sous_tableaux[3][1];
+              $nom3=$sous_tableaux[3][1];
+              $image3=$sous_tableaux[3][6];
+              $date_sorti3=$sous_tableaux[3][2];
+              $prix3=$sous_tableaux[3][5];
 
                 echo "<div class='col-md-3 col-sm-6 col-xs-12'>
-                  <div class=' taille-carte card mb-4'>
+                  <a class='carte_lien' href='Article.php?id_art=".$sous_tableaux[3][0]."'><div class=' taille-carte card mb-4'>
                     <img src='$image3' class='card-img-top' alt='Image produit 4'>
                     <div class='card-body'>
-                      <h5 class='card-title'>Produit 4</h5>
-                      <p class='card-text'>nom du jeux : "." ".$nom3."</p>
-                      <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                      <p class='card-text'>"." ".$nom3." "."</p>
+                      <h5 class='card-title'>"." ".$prix3." "." €</h5>
+                      
                     </div>
-                  </div>
+                  </div></a>
                 </div>";
             }
             //si la condition 3 est verifié et 4 est fausse, alors il faut rajouter 1 article par défaut pour completer la ligne
@@ -321,14 +408,14 @@ session_start();
 
               //Article 4
                             echo "<div class='col-md-3 col-sm-6 col-xs-12'>
-                              <div class=' taille-carte card mb-4'>
+                             <a class='carte_lien' href='Article.php?id_art=".$sous_tableaux[3][0]."'> <div class=' taille-carte card mb-4'>
                                 <img src='Images/200.webp' class='card-img-top' alt='Image produit 2'>
                                 <div class='card-body'>
-                                  <h5 class='card-title'>Produit 4</h5>
-                                  <p class='card-text'>200PR</p>
-                                  <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                                  <p class='card-text'>300pop</p>
+                                  <h5 class='card-title'>9.99€</h5>
+                                  
                                 </div>
-                              </div>
+                              </div></a>
                             </div>";
             }
 
@@ -340,22 +427,25 @@ session_start();
       }
     }
 
-    //si le user n'a pas fait de recherche, il faut afficher les produits par defaut(recommandation en quelques sorte)
+
+    //<a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+
+    //si le user n'a pas fait de recherche, il faut afficher les produits recommadé de chaque user 
+
+    // recuperer les jeux de la variable de session créee depuis le fichier recommandatio2.php et les afficher
+    
     else{
       echo "<div afficheIm class='container mt-5'>
            <div  class='row'>
             <div class='col-md-3 col-sm-6 col-xs-12'>
              <div class=' taille-carte card mb-4'>
 
-              <video controls>
-               <source src='Images/pp.webm' autopaly class='card-img-top' type='video/webm'>
-                    Votre navigateur ne supporte pas le format vidéo WebM.
-              </video>
+            <img src='Images/course.jpg' class='card-img-top'  alt='image de voiture '>
 
               <div class='card-body'>
                 <h5 class='card-title'>Article 1</h5>
                 <p class='card-text'>Description</p>
-                <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                
               </div>
             </div>
           </div>
@@ -365,7 +455,7 @@ session_start();
               <div class='card-body'>
                 <h5 class='card-title'>Article 2</h5>
                 <p class='card-text'>Description</p>
-                <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                
               </div>
             </div>
           </div>
@@ -375,7 +465,7 @@ session_start();
               <div class='card-body'>
                 <h5 class='card-title'>Article 3</h5>
                 <p class='card-text'>Description</p>
-                <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                
               </div>
             </div>
           </div>
@@ -385,7 +475,7 @@ session_start();
                 <div class='card-body'>
                   <h5 class='card-title'>Article 4</h5>
                   <p class='card-text'>Description </p>
-                  <a href='#' class='btn btn-primary'>Ajouter au panier</a>
+                  
               </div>
             </div>
           </div>
@@ -400,7 +490,7 @@ session_start();
                   <div class='card-body'>
                     <h5 class='card-title'>Article 5</h5>
                     <p class='card-text'>Description</p>
-                    <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                    
                   </div>
                  </div>
                 </div>
@@ -410,7 +500,7 @@ session_start();
                   <div class='card-body'>
                     <h5 class='card-title'>Article 6</h5>
                     <p class='card-text'>Description</p>
-                    <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                    
                   </div>
                  </div>
                 </div>
@@ -420,7 +510,7 @@ session_start();
                       <div class='card-body'>
                         <h5 class='card-title'>Article 7</h5>
                         <p class='card-text'>Description</p>
-                        <a href='#'' class='btn btn-primary'>Ajouter au panier</a>
+                        
                       </div>
                     </div>
                   </div>
@@ -430,7 +520,7 @@ session_start();
                         <div class='card-body'>
                           <h5 class='card-title'>Article _</h5>
                           <p class='card-text'>Description </p>
-                          <a href='#' class='btn btn-primary'>Ajouter au panier</a>
+                         
                       </div>
                     </div>
                   </div>
@@ -446,11 +536,14 @@ session_start();
   ?>
 
   <footer class="bg-dark text-white">
+  <hr>
   <div class="container">
     <div class="row">
       <div class="colonne1 col-md-6">
+
         <h5 class="mb-3">À propos</h5>
-        <p class="mb-0 ">Game Store est une boutique en ligne spécialisée dans la vente de jeux vidéo et d'accessoires pour gamers.</p>
+        <p>Game Store propose une large sélection de jeux vidéo en ligne.</p>
+        <p class="mb-0 ">Trouvez les meilleurs jeux vidéo en ligne sur Game Store.</p>
       </div>
       <div class="col-md-3">
         <h5 class="mb-3">Liens utiles</h5>
@@ -459,19 +552,29 @@ session_start();
           
           <li><a href="#">Promotions</a></li>
           <li><a href="FormulaireContact.php">Contact</a></li>
+          <?php
+
+          if ($client_connecté) {
+            echo "<li class='nav-item '><a  class='nav-link' href='deconnexion.php'>deconnexion</a></li>";
+          }
+
+          ?>
+
         </ul>
       </div>
       <div class="col-md-3">
         <h5 class="mb-3">Restez connecté</h5>
         <ul class="list-unstyled">
-          <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-          
+          <li><a href="#"><li class="fa fa-facebook"></li> Facebook</a></li>
+          <li><a href="#"><li class="fa fa-twitter"></li> Twitter</a></li>
+          <li><a href="#"><li class="fa fa-instagram"></li> Instagram</a></li>
+
         </ul>
+
       </div>
     </div>
   </div>
+  <hr>
   <div class="bg-dark text-center py-2">
     <p class="mb-0">&copy; 2023 Game Store. Tous droits réservés.</p>
   </div>
