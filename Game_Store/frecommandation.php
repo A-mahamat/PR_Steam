@@ -3,7 +3,7 @@ function recupererRecommandations($user_id) {
     include "fonctionConnexion.php";
     $conn = connDB();
     // Modifiez la requête SQL pour utiliser la table "games" et la colonne "genres"
-    $sql = "SELECT DISTINCT games.* FROM games JOIN interets_utilisateurs ON games.genres = interets_utilisateurs.genre WHERE interets_utilisateurs.user_id = :user_id";
+    $sql = "SELECT DISTINCT * FROM games JOIN interets_utilisateurs ON games.genres = interets_utilisateurs.genre WHERE interets_utilisateurs.user_id = :user_id";
     try {
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':user_id', $user_id);

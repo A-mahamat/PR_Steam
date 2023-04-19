@@ -27,7 +27,7 @@ session_start();
 
 		//preparation de la rqt
 
-		$rqt=$conn->prepare("SELECT * FROM   games where   name LIKE ? OR developer LIKE ? OR platforms LIKE ? limit 100  ");
+		$rqt=$conn->prepare("SELECT * FROM   games where   name LIKE ? OR developer LIKE ? OR platforms LIKE ? limit 40  ");
 
 		//exécution de la requête
 
@@ -48,11 +48,7 @@ session_start();
 		$recherche=$_POST['recherche'];
 
 		//appel de la fonction 
-		$id1=10;
-		$id2=20;
-		$id3=30;
-		$id4=40;
-		$id5=50;
+		
 	
 
 		$resultat=recherccheJeux($recherche);
@@ -65,14 +61,14 @@ session_start();
 
 			$_SESSION['jeux']=array();
 
-			//une boucle pour rajouter le jeux recuperés 
+			//une boucle pour rajouter les jeux recuperés 
 
 
 			while($ligne=$resultat->fetch()){
 
 				// echo $ligne['name']." ".$ligne['developer']." ".$ligne['platforms']." ".$ligne['url_image']."<br>";
 
-				$jeux=array($ligne['name'],$ligne['release_date'],$ligne['developer'],$ligne['platforms'],$ligne['price'],$ligne['url_image']);
+				$jeux=array($ligne['appid'],$ligne['name'],$ligne['release_date'],$ligne['developer'],$ligne['platforms'],$ligne['price'],$ligne['url_image']);
 
 			$_SESSION['jeux'][]=$jeux;
 

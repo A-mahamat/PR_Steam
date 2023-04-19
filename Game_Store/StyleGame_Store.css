@@ -1,0 +1,261 @@
+
+
+
+/*Style pour Index0.php */
+
+/* style pour la barre de navigation dans index0 */
+
+.barN a{
+      text-decoration: none;
+      color: black;
+    }
+/* style pour le body de la page indexo0 */
+.corps_id0{
+	background-color: #2F4F4F;
+      background-repeat: no-repeat;
+
+    
+    }
+    
+
+.phraseAcc{
+	font-family: 'Paintbrush', cursive;
+      font-size: 36px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+}
+hr{
+	border-width: 2px ;
+	border-color: white;
+	
+}
+/* style pour les carte dans Index0*/
+
+  .carte_lien{
+    text-decoration: none;
+      color: black;
+      font-weight: 700;
+
+
+
+ }
+ .multi_choix a{
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  font-weight: 700;
+}
+  
+  }
+  /* style pour le le logot*/
+
+ .logo{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    color: #4F6F6F;
+    text-shadow: 2px 2px #000000;
+    letter-spacing: -2px;
+    font-weight: bold;
+  }
+  
+  .logo span {
+    display: inline-block;
+    margin: 0 2px;
+    animation: glow 2s infinite;
+  }
+  
+  @keyframes glow {
+    0% {
+      color: #4F6F6F;
+      text-shadow: none;
+    }
+    
+    50% {
+      color: #7F9F9F;
+      text-shadow: 0 0 5px #7F9F9F, 0 0 10px #7F9F9F, 0 0 15px #7F9F9F;
+    }
+    
+    100% {
+      color: #4F6F6F;
+      text-shadow: none;
+    }
+  }
+
+  
+   
+
+
+   
+  
+  
+  .SECTION{
+
+  	margin-right: 460px;
+  }
+ }
+/* style pour le volet de la section dans Index0*/
+ .menu{
+ 	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ .menu-item {
+ 	display: inline-block;
+      position: relative;
+
+}
+/* style de l'element "section" dans Index0*/
+ .menu-item>a {
+ 	display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: 700;
+      margin-top: 18px;
+      text-align: left;
+}
+/* style pour les listes contenus dans le volet "section" dans Index0*/
+ .submenu {
+ 	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	display: none;
+	background-color:  #343a40;
+}
+/* style pour les liens <a> contenus dans les  listes contenus dans le volet "section" dans Index0*/
+ .submenu li a {
+	display: block;
+	padding: 5px;
+	font-weight: 400;
+}
+ .menu-item:hover .submenu {
+ 	display: block;
+ }
+ .menu-item:first-child {
+ 	margin-top: -2px;
+ 	margin-left: -30px;
+ }
+
+/*styl du nom de user lorsqu'il est conncté */
+#a_nom_user{
+  margin-right: 25px;
+  text-decoration: none;
+  color: white;
+  margin-top: 15px;
+}
+/*style pour le lien de la connexion lorsqu'il est non-connecté dans index0*/
+.afficheConnexion{
+	list-style: none;
+      font-weight: 700;
+    }
+
+/* règles css pour avoir une même taille des carte, element parent de images*/
+.taille-carte {
+	height: 80%;
+    }
+
+/* règles css pour avoir une même taille pour toutes les images */
+
+.card-img-top {
+	height: 250px;
+    }
+/*style pour le lien panier  dans Index0*/
+
+.panier a{
+	text-decoration: none;
+	color: white;
+	font-weight: 700;
+	margin-left: 10px;
+
+
+}
+
+
+
+
+
+/*style pour les listes liens du  footer dans Index0*/
+
+footer a{
+      text-decoration: none;
+      color: white;
+    }
+
+
+
+  
+
+
+/*Style pour le formulaire de le connexion  */
+
+.corps_ForConnexion{
+	background-image: url("Images/combat.jpg");
+
+
+}
+.Accueil a{
+	margin-top: 30px;
+	margin-left: 950px;
+
+}
+
+/*Style pour le fond du  formulaire de la connexion  */
+
+#fond_formulaireIns{
+	background-color: #f8f8f8;
+	border: 10px;
+}
+
+
+
+/*Style pour le fond du  formulaire de la connexion  */
+
+.fon{
+	font-weight: 600;
+}
+
+/*Style pour les champs de saisie du  formulaire de la connexion  */
+
+.nomChamps{
+	font-weight: 600;
+    }
+
+/*Style pour le formulaire de l'Inscription */
+
+.corps_ForIns{
+	background-image: url("Images/mine2.jpg");
+}
+
+
+/*Style pour le fichier statistiques */
+
+
+.div-carte{
+
+	background-color: black;
+}
+
+/* Styles pour le formulaire du contact */
+
+
+ /* Style de la barre de navigation */
+ nav {
+ 	background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+
+    
+nav a {
+	text-decoration: none;
+}
+
+/* Style de la classe personnalisée pour le conteneur de la form */
+
+
+
+
+
+

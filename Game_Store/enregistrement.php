@@ -20,10 +20,10 @@
 		//reqt pour enregistrer dans la table utilisateur de la base de donnée
          try{
 
-         	$rqt=$conn->prepare("Insert Into utilisateur (nom,prenom,date_de_naissance,password,email) Values(?,?,?,?,?)");
+         	 $rqt=$conn->prepare("Insert Into utilisateur (nom,prenom,date_de_naissance,password,email) Values(?,?,?,?,?)");
 		
 		    //exécution de la rqt
-         	$rqt->execute(array($nom, $prenom, $date_de_naissance, $password, $email));
+         	$rqt->execute(array($nom,$prenom,$date_de_naissance,$password,$email));
          	echo "Inscription Reussie !<br>";
 
          }catch(PDOException $e){
@@ -31,10 +31,13 @@
          	if ($e->getcode()==23000) {
          		
          		echo "utilisateur existe déjà, veuillez vous connecter<br>";
-         		echo "<meta http-equiv='refresh' content='3; url=FormulaireConnexionUser.php'>";
+         		echo "<meta http-equiv='refresh' content='20; url=FormulaireConnexionUser.php'>";
          	}
          	else{
          		echo "erreur"." ".$e->getcode();
+         		echo "<br> Code d'erreur SQLSTATE : " . $e->getCode();
+         		echo "<br> Informations détaillées sur l'erreur : ";
+         		print_r($conn->errorInfo());
          	}
          }
 		
@@ -67,7 +70,7 @@
 
 			
 
-			echo "<meta http-equiv='refresh' content='3; url=FormulaireConnexionUser.php'>";
+			echo "<meta http-equiv='refresh' content='5; url=FormulaireConnexionUser.php'>";
 		}
 		else{
 

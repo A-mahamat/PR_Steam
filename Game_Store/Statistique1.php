@@ -6,9 +6,10 @@ include 'fonctionConnexion.php';
 $conn = connDB();
 // Préparation de la requête pour extraire les données
 $rqt = $conn->prepare("SELECT name, 
-average_playtime  FROM games   LIMIT 25");
+average_playtime  FROM games    ORDER BY average_playtime DESC LIMIT 10");
 // Exécution de la requête
 $rqt->execute(array());
+
 // Récupération des résultats de la requête
 
 $results = $rqt->fetchAll(PDO::FETCH_ASSOC);
@@ -33,8 +34,8 @@ $results = $rqt->fetchAll(PDO::FETCH_ASSOC);
 		// Fonction de rappel lorsque les bibliothèques sont chargées
 		google.charts.setOnLoadCallback(drawChart);
 		function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-        ['name', 'average_playtime'],
+			var data = google.visualization.arrayToDataTable([
+				['name', 'average_playtime'],
         <?php
         foreach ($results as $ligne) {
            echo "['" . $ligne['name'] . "', " . $ligne['average_playtime'] . "],";
@@ -49,15 +50,31 @@ $results = $rqt->fetchAll(PDO::FETCH_ASSOC);
         hAxis: {title: 'Nom de jeux',titleTextStyle: {color: '#fff'}, textStyle: {color: '#fff'}, baselineColor: '#fff'},
         vAxis: {title: 'Temps', titleTextStyle: {color: '#fff'}, textStyle: {color: '#fff'}, baselineColor: '#fff'},
         backgroundColor: 'transparent',
-        width: 850,
-        height: 400,
+        height: 500,
+
+
         
     };
 
     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    
 
     chart.draw(data, options);
+
+    window.onresize = function() {
+        	chart.draw(data, options);
+        };
+
+
+
+       
+   
+
+
+     
 }
+ 
+
 
 	</script>
 	<style type="text/css">
@@ -69,11 +86,8 @@ $results = $rqt->fetchAll(PDO::FETCH_ASSOC);
 
 }
 
-#chart_div {
-        margin-left: 18%;
-        margin-top: 2%;
-        margin-right: 20%;
-    }
+
+
 .titre_graph{
 
 	text-align: center;
@@ -84,7 +98,7 @@ $results = $rqt->fetchAll(PDO::FETCH_ASSOC);
 	
 
 </head>
-<body class="bg-black">
+<body class="bg-black" onresize="drawChart()" >
 
 	<nav class="barN_stat  bg-dark  navbar-fixed-top  navbar navbar-expand-md mb-5 ">
 		<div><!-- lien pr retourner le User vers la page d'accueil -->
@@ -95,8 +109,9 @@ $results = $rqt->fetchAll(PDO::FETCH_ASSOC);
   </nav>
 
   <h3 class="titre_graph ">Temps de jeu moyen par jeu</h3>
-	<div id="chart_div" class="bg-dark">
-		
-	</div> 
+  
+  	<div id="chart_div" class="bg-dark">
+  </div>
+
 </body>
 </html>
