@@ -15,6 +15,7 @@
 	width: 60%; 
       padding: 20px;
 }
+/*style de la carte de l'article*/
 
 
 
@@ -35,9 +36,11 @@
 .taille-Article-carte a{
 	text-decoration: none;
 }
-#image_logo{
-	margin-right: 86%;
-}
+
+
+/*style des etoiles */
+
+
 
 .star-rating {
   display: flex;
@@ -66,15 +69,14 @@
 </head>
 <body class='corps_id0' >
 	<nav class="barN  bg-dark text-light navbar-fixed-top  navbar navbar-expand-md mb-5 ">
-		<!-- <div id="image_logo">
-			<img src="Images/GS5.png" height="70px" width="70px"> 
-		</div> -->
+		
 
      <div class="multi_choix collapse navbar-collapse" id="NavbarMenu"> 
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item"><a class="mb-3 mx-3 nav-link" href="Index0.php"> Accueil</a></li>
+          <li class="nav-item"><a class="mb-3 mx-3 nav-link" href="../Index0.php"> Accueil</a></li>
           </ul>
      </div>
+     <!-- logo du site -->
      <div class="logo">
         <span>G</span>
         <span>A</span>
@@ -117,7 +119,7 @@
 
 	}
 
-	//fonction pour recuper l'evaluation positive du jeu
+	//fonction pour recuperer la valeur max des evaluation
 	function RecuperationEvaluationMax($conn){
 
 
@@ -138,7 +140,7 @@
 		$rqt=$conn->prepare("SELECT Min(positive_ratings) FROM games");
 
 		
-
+    //exécution
 		$rqt->execute();
 
 		return $rqt;
@@ -148,7 +150,7 @@
 
 
 
-
+   //fonction pour ajouter l'article au panier 
 	function AjoutPanier($conn,$id_utilisateur,$id_jeu,$prix){
 		
 
@@ -156,9 +158,7 @@
 		$rqt=$conn->prepare("Insert Into panier (id_utilisateur,id_jeu,prix) Values(?,?,?)");
 		$rqt->execute(array($id_utilisateur,$id_jeu,$prix));
 
-
-
-		echo "artccle bien ajuté au panier !";
+		
 
 		
 
@@ -166,31 +166,32 @@
 	}
 
 
-	function test(){
-
-		echo "ouii";
-	}
+	
 
 	
 
-
+   //appel de la fonction pour recuperer les infos de l'article à afficher
 	$resultat=RecuperationInfosArticles($conn,$id);
         
         //verification s'l y a au moins un jeux qui répond aux critères de la recherche
 		if ($resultat->rowCount()>0) {
 			
 
-			//creation d'une varaible de session
+			//creation d'une varaible de session pour la recuperer dans la page AjoutPanier
 
 			$_SESSION['Article']=array();
 
-			//une boucle pour rajouter le jeux recuperés 
+			//rajouter le jeux recuperés 
 
 
 			$ligne=$resultat->fetch();
-			// $Article=array($ligne['appid'],$ligne['name'],$ligne['release_date'],$ligne['developer'],$ligne['platforms'],$ligne['price'],$ligne['url_image']);
+			$Article=array($ligne['appid'],$ligne['name'],$ligne['release_date'],$ligne['developer'],$ligne['platforms'],$ligne['price'],$ligne['url_image']);
 
-			// $_SESSION['Article'][]=$Article;
+			$_SESSION['Article'][]=$Article;
+			
+
+
+			
 
 
 
@@ -203,6 +204,7 @@
 			
 
 			
+			//afficher l'article recuperé 
 		
 
 			echo "<div class=' ligne row '>
@@ -227,26 +229,16 @@
 			            	 
 			            	
 			            	
+			            	//bouton d'ajout
+
+			            	echo "<a href='AjoutPanier.php'><button class='btn btn-primary mt-3'>Ajouter au panier</button></a>";
+
 			            	
 
-			            	echo"<button class='btn btn-primary mt-3'  >Ajouter au panier</button><br>";
-
 			            	
-			            	// echo "<div class='star-rating mt-3'>
-			            	//  <input type='radio' id='1-stars' name='rating' value='1' />
-							//   <label for='1-stars'>★</label>
-							//   <input type='radio' id='2-stars' name='rating'value='2'/>
-							//   <label for='2-stars'>★</label>
-							//   <input type='radio' id='3-stars'name='rating' value='3' />
-							//   <label for='3-stars'>★</label>
-							//   <input type='radio' id='4-stars'name='rating'value='4'/>
-							//   <label for='4-stars'>★</label>
-							//   <input type='radio' id='5-star' name='rating' value='5'/>
-							//   <label for='5-star'>★</label>
-							// </div>";
 
 
-							// Code HTML de la section des évaluations 
+							//affichage d'evaluation liée à l'article
 
 							$resultatMin= RecuperationEvaluationMin($conn);
 							$resultatMax= RecuperationEvaluationMax($conn);
@@ -256,16 +248,18 @@
 
 							
 
-
+               //recuperer l'evaluation positive existante
 							$note = $ligne['positive_ratings']; 
+							//recuperer l'evaluation max 
 							$note_max =  $Max[0];
+							//recuperer l'evaluation max 
 							$note_min = $min[0];
 
-							// Calcul du nombre d'étoiles à pré-remplir
+							// normaliser la note 
 							$etoiles_remplies = round(($note - $note_min) / ($note_max - $note_min) * 5);
 							
 							
-							// Nombre d'étoiles à remplir
+							// remplir les etoile
 							echo "<div class='star-rating'>";
 							for ($i = 5; $i >= 1; $i--) {
 							    if ($i >= $etoiles_remplies) {
@@ -286,6 +280,7 @@
 
 			            	
 			            }
+			            //si le user n'est pas conecté, il ne pourra pas ajouter des articles au panier
 			            else{
 			            	echo "<p><a href='FormulaireConnexionUser.php'>conntectez-vous pour ajouter le jeu au panier</a></p>";
 			            }
