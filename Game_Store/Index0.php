@@ -1,7 +1,17 @@
 <?php
 session_start();
+ include 'fonctionConnexion.php';
+ $conn = connDB();
 
+  $rqt_genres = $conn->prepare("SELECT DISTINCT genres FROM games");    
+  $rqt_genres->execute();
+  $genres = $rqt_genres->fetchAll(PDO::FETCH_ASSOC);
+  $rqt_developers = $conn->prepare("SELECT DISTINCT developer FROM games");
+  $rqt_developers->execute();
+  $developers = $rqt_developers->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -120,9 +130,7 @@ session_start();
       </button>
       <div class="multi_choix collapse navbar-collapse" id="NavbarMenu">
           <ul class="navbar-nav">
-          <li class="  nav-item"><a class="nav-link a_different_de_section " href="#">TAGS</a></li>
-          <li class="  nav-item  "><a  class="  nav-link a_different_de_section "  href="#">FILTRES</a></li>
-      </div>
+        </div>
 
           
         <div class="SECTION">
@@ -131,7 +139,7 @@ session_start();
             <a href="#">SECTION</a>
             <ul class="submenu">
               <li class="nav-item"><a class="nav-link" href="#">communauté</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">nouveauté</a></li>
+              <li class="nav-item"><a class="nav-link" href="nouveaute.php">nouveauté</a></li>
               <li class="nav-item"><a class="nav-link" href="Statistique1.php">statistiques</a></li>
               <li class="nav-item"><a class="nav-link" href="recommandations.php">Voir les recommandations</a></li>
               <li class="nav-item"><a class="nav-link" href="recommandations2.php"> Quel jeu te ferait plaisir ?</a></li>
@@ -140,16 +148,37 @@ session_start();
           </li>
         </ul>
       </div>
+
+      
+      <section id="filters">
+    <h2>Filtres</h2>
+<form action="filtered_games.php" method="GET">
+    <div>
+        <label for="genre">Genre :</label>
+        <select name="genre" id="genre">
+        <?php
+            foreach ($genres as $genre) {
+                echo '<option value="' . $genre['genres'] . '">' . $genre['genres'] . '</option>';
+            }
+            ?>
+        </select>
+    </div>
+    <div>
+       
+        </select>
+    </div>
+    <div>
+        <label for="price">Prix max :</label>
+        <input type="number" name="price" id="price" step="0.01" min="0">
+    </div>
+    <button type="submit">Filtrer</button>
+</form>
+</section>
+</div>
         
 
         
-
-
-      
-      
-
-
-     <div class="afficheConnexion">    
+ <div class="afficheConnexion">    
 
       <?php 
 
@@ -580,13 +609,6 @@ session_start();
   </div>
 </footer>
 
-
-    
-    
-
- 
-
-  
 
 </body>
 </html>

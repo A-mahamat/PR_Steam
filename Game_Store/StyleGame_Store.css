@@ -47,7 +47,7 @@ hr{
   font-weight: 700;
 }
   
-  }
+  
   /* style pour le le logot*/
 
  .logo{
@@ -57,6 +57,7 @@ hr{
     text-shadow: 2px 2px #000000;
     letter-spacing: -2px;
     font-weight: bold;
+    width: 160PX;
   }
   
   .logo span {
@@ -93,7 +94,9 @@ hr{
 
   	margin-right: 460px;
   }
- }
+
+ 
+
 /* style pour le volet de la section dans Index0*/
  .menu{
  	list-style: none;
@@ -252,9 +255,241 @@ nav a {
 	text-decoration: none;
 }
 
-/* Style de la classe personnalisée pour le conteneur de la form */
+/* Conteneur principal de la section nouveautés */
+html {
+  background-color: #121212;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  
+}
+.new-games-container {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 20px;
+  background-color: #121212;
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* Titre de la section nouveautés */
+.new-games-container h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Carte de jeu individuelle */
+.game-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  overflow: hidden; /* Ajouté pour éviter que le texte ne dépasse */
+}
+
+/* Effet de survol pour les cartes de jeu */
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Titre du jeu */
+.game-card h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+/* Texte de la carte de jeu */
+.game-card p {
+  font-size: 0.9rem;
+  color: #cccccc;
+  margin-bottom: 0.2rem;
+  text-overflow: ellipsis; /* Ajouté pour tronquer le texte */
+  overflow: hidden; /* Ajouté pour cacher le texte débordant */
+  white-space: nowrap; /* Ajouté pour empêcher les retours à la ligne */
+}
+
+/* Lien vers la page de détails du jeu */
+.game-card a {
+  display: inline-block;
+  text-decoration: none;
+  color: #1e88e5;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Effet de survol pour le lien vers la page de détails du jeu */
+.game-card a:hover {
+  text-decoration: underline;
+}
+
+/* Forum */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #6d1212;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: rgb(56, 16, 16);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.parent .comment {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: rgb(172, 21, 21) !important;
+
+}
+
+.comment-text {
+ color : green;
+}
+
+/* Section FILTRES */
 
 
+#filters h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#filters form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#filters label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#filters select,
+#filters input {
+  padding: 5px 10px;
+  border: 1px solid #6f1a1a;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+#filters button {
+  padding: auto;
+  border: none;
+  background-color: #007bff;
+  color: rgb(46, 15, 15);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: auto;
+}
+
+#filters button:hover {
+  background-color: #0056b3;
+}
+
+/* Conteneur de la section FILTRES */
+#filters-container {
+  position: relative;
+  top: auto; /* ajuster en fonction de la hauteur de votre en-tête */
+  right: 100px;
+  left: 50px;
+  width: 150px; /* ajuster en fonction de la largeur souhaitée */
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(184, 106, 106, 0.1);
+  z-index: 1000; /* s'assurer que la fenêtre de filtre est au-dessus des autres éléments */
+}
+
+/* Section FILTRES */
+#filters {
+  
+  overflow-y: auto;
+  position: relative;
+  right: 150px;
+}
+
+/* Gradients pour un aspect moderne */
+.gradient-bg {
+  background-image: linear-gradient(to right, #1D4350, #A43931);
+}
+
+/* Arrondir les coins et ajouter une ombre pour les cartes */
+.rounded-corners {
+  border-radius: 15px;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Espacement entre les éléments de texte */
+.card-text,
+.card-title {
+  margin-bottom: 0.5rem;
+}
+
+/* Styles pour les liens */
+.card-text a,
+.card-title a {
+  color: #f8f9fa;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card-text a:hover,
+.card-title a:hover {
+  color: #adb5bd;
+  text-decoration: underline;
+}
+
+/* Bouton Ajouter au panier */
+.btn-primary {
+  background-color: #A43931;
+  border-color: #A43931;
+}
+
+.btn-primary:hover {
+  background-color: #822E1F;
+  border-color: #822E1F;
+}
+
+/* Espace entre le contenu et la bordure de la carte */
+.carte-infos {
+  padding: 1.5rem;
+}
 
 
 

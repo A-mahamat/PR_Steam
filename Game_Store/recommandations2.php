@@ -6,7 +6,7 @@ ini_set('display_errors', 1);
 // Paramètres de connexion à la base de données
 $servername = "localhost";
 $username = "root";
-$password = "Halima123";
+$password = "root";
 $dbname = "game store";
 $user_id = 1; // ID de l'utilisateur pour lequel vous souhaitez générer des recommandations
 

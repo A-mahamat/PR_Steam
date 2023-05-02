@@ -11,7 +11,7 @@
 		$host = "localhost";
 		$dbname = "game store";
    	 	$Username = "root";
-    	$password = "Halima123";
+    	$password = "root";
 
     	try {
     		$conn=new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4",$Username,$password);
